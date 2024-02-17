@@ -40,7 +40,7 @@ def generate_radio_list(r1_range, r2_range, r3_range, r4_range, r5_range):
 def generate_fiber_parameters(final_centroid_to_simu, r1_range, r2_range, r3_range, r4_range, r5_range, numb_fib_total_range):
     simulated_tractography = []
     par_list = []
-
+    idx=1
     for centroide in final_centroid_to_simu:
         numb_fib_total = rn.randint(*numb_fib_total_range)
         radio_list = generate_radio_list(r1_range, r2_range, r3_range, r4_range, r5_range)
@@ -52,8 +52,8 @@ def generate_fiber_parameters(final_centroid_to_simu, r1_range, r2_range, r3_ran
 
         simulated_tractography.append(lista_unica)
       
-    for idx, _ in enumerate(final_centroid_to_simu):
-        print('Terminado Fascículo', idx)
+        print('Completed simulated bundle', idx)
+        idx+=1
 
     return simulated_tractography, par_list
 
@@ -101,6 +101,7 @@ def generate_labels(simulated_tractography):
     with open('resultados/labels.txt', 'w') as f:
         for index_list in index_sim_tractography:
             f.write(' '.join(map(str, index_list)) + '\n')
+
 
 
 
