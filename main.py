@@ -12,6 +12,7 @@ import generate_parameters as gp
 import time
 inicio = time.time()
 
+inicio=time.time()
 
 def main():
     # Input Parameters (default settings change them for your application)
@@ -24,8 +25,7 @@ def main():
     numb_fib_total_range = [50, 300]
     mu = 0
     sigma_range = [2.5,3.5]
-    centroids, _ = bt.read_bundle('Example/100centroides.bundles')
-    centroids=centroids[0:2]
+    centroids, _ = bt.read_bundle('Example/centroids.bundles')
     ######################################
   
     if not os.path.exists("resultados"):
@@ -47,17 +47,11 @@ def main():
         gp.generate_labels(simulated_tractography_disperse)
         bt.write_bundle_severalbundles('resultados/simulated_tractography.bundles', simulated_tractography)
 
+
 if __name__ == "__main__":
     main()
+fin=time.time()
+print(fin-inicio)
 
-
-
-fin = time.time()
-print(fin-inicio)    
-import visual_tools as vs
-
-simulated_tractography, _ = bt.read_bundle_severalbundles('resultados/simulated_tractography.bundles')
-
-vs.visual_allpoints(simulated_tractography[0:2])
 
 
