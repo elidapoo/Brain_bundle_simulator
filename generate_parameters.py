@@ -98,11 +98,9 @@ def generate_labels(simulated_tractography):
         
 
 
-    with open('resultados/labels.txt', 'w') as f:
+    with open('results/labels.txt', 'w') as f:
         for index_list in index_sim_tractography:
             f.write(' '.join(map(str, index_list)) + '\n')
-
-
 
 
 

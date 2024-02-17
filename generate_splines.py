@@ -156,3 +156,5 @@ def splines_simulator(fiber_points,radio_list,centroide,numb_fib_total):
         
     return spline_all, points_all_spline,d_list
 
+
+
