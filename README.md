@@ -23,7 +23,7 @@ To use the code, install the following libraries:
 In the following folder are available resampled centroids with 21 points.
 
 ## Input parameters
-- **Centroids**: Centroids in format .bundles/.bundlesdata. The default path is the example folder. (Fibers must have 21 points).
+- **centroids**: Centroids in format .bundles/.bundlesdata. The default path is the example folder. (Fibers must have 21 points).
 - **r1_range, r2_range, r3_range, r4_range, r5_range**: Range radii of the 5 cross-sections.
 - **numb_fib_total_range**: Range for the total number of fibers per simulated bundle.
 - **mu, sigma_range**: Mean and variance to optionally add Gaussian noise to the first 5 points at each end of the fiber.
