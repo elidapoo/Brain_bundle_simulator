@@ -22,6 +22,9 @@ To use the code, install the following libraries:
 ## Example
 In the following folder are available resampled centroids with 21 points.
 
+## Whole-brain datasets
+In the following folder are available three simulated whole brain datasets.
+
 ## Input parameters
 - **centroids**: Centroids in format .bundles/.bundlesdata. The default path is the example folder. (Fibers must have 21 points).
 - **r1_range, r2_range, r3_range, r4_range, r5_range**: Range radii of the 5 cross-sections.
