@@ -1,11 +1,11 @@
-# Brain Fiber Bundle Simulator
+# PhyberSIM: Brain Fiber Bundle Simulator
 
 ## Overview
 This code implements a brain fiber bundle simulator using spline curves for fiber representation.
 
 ## Prerequisites
 - The code has been executed on both Windows and Ubuntu platforms.
-- Tested on Python 3.9 and 3.11 versions.
+- Tested on Python 3.9.
 
 ## Code Dependencies
 To use the code, install the following libraries:
