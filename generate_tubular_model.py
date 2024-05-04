@@ -22,33 +22,31 @@ def getRandomVect(mu, sigma):
          return vect
 #%% Finding the point to rotate around the centroid
 
-def find_point_to_rotate(radio,point,p1,vd):
+def find_point_to_rotate(radio, point, p1, vd):
+    # Normalizar el vector director del plano noes necesario se normalizo en el tangent_vector
+    # vd_normalized = np.array(vd) / np.linalg.norm(vd)
+    vd_normalized=vd
     
-    D=-(vd[0]*p1[0]+ vd[1]*p1[1]+ vd[2]*p1[2]) #valor D del plado
+   
+    point_to_rotate = np.array(point) + vd_normalized * radio  # Calcular un punto_to_rotate inicial a una distancia 'radio' en la dirección de 'vd'
+
+   
+    fixed_vector = np.array([1, 0, 0])
+    perpendicular_plane_normal = np.cross(vd_normalized, fixed_vector)
+    perpendicular_plane_normal /= np.linalg.norm(perpendicular_plane_normal)  
     
-    r=0
-    c=0
-    h=[]   
-    while True:
-        vect = getRandomVect(0,radio)
-        point_to_rotate=vect+point
-        
-        #comprobar si el punto pertenece al plano
-        D_comp=-(point_to_rotate[0]*vd[0]+ point_to_rotate[1]*vd[1]+ point_to_rotate[2]*vd[2])
-                
-        if round(D_comp,2)==round(D,2):
-      
-            r=math.sqrt((point_to_rotate[0]-point[0])**2 + (point_to_rotate[1]-point[1])**2 + (point_to_rotate[2]-point[2])**2)
-            vd1=[(point_to_rotate[0]-p1[0]),(point_to_rotate[1]-p1[1]),(point_to_rotate[2]-p1[2])]
-            g=vd[0]*vd1[0]+ vd[1]*vd1[1] +vd[2]*vd1[2]
-            h.append(g)
-                      
-            if  round(r)==radio and abs(round(g,3))==0.0:  #
-                                                         
-                   break
-                                                      
-        c+=1
-    return point_to_rotate, r,c,g,vd,vd1,D 
+  
+    random_numbers = np.random.uniform(-1, 1, size=2)
+    
+   
+    random_vector = random_numbers[0] * vd_normalized + random_numbers[1] * perpendicular_plane_normal   # Calcular el vector aleatorio como combinación lineal de los vectores
+     # perpendiculares a 'vd' y normalizado
+    
+  
+    point_to_rotate += random_vector * radio
+    vd1=[(point_to_rotate[0]-p1[0]),(point_to_rotate[1]-p1[1]),(point_to_rotate[2]-p1[2])]
+    
+    return point_to_rotate,vd1 
 
 #%%
 
@@ -136,12 +134,12 @@ def allpoints_generator(radio_list, centroide, point_list):
         p1 = point_list[i]
 
         if i == 0:
-            point_to_rotate,r,c,g,vd,vd1,D= find_point_to_rotate(radio_list[i], point_list[i], point_list[i], tangent_function(centroide, point_list[i]))
+            point_to_rotate,vd1= find_point_to_rotate(radio_list[i], point_list[i], point_list[i], tangent_function(centroide, point_list[i]))
         else:
             alfa = radio_list[i] / radio_list[0]
             point_recta = [(alfa * vd1[0] + p1[0]), (alfa * vd1[1] + p1[1]), (alfa * vd1[2] + p1[2])]
             point_to_rotate = point_recta
-            r = math.sqrt((point_to_rotate[0] - p1[0]) ** 2 + (point_to_rotate[1] - p1[1]) ** 2 + (point_to_rotate[2] - p1[2]) ** 2)
+            #r = math.sqrt((point_to_rotate[0] - p1[0]) ** 2 + (point_to_rotate[1] - p1[1]) ** 2 + (point_to_rotate[2] - p1[2]) ** 2)
 
   
         d = []
