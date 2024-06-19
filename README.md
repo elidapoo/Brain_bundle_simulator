@@ -1,7 +1,7 @@
 # PhyberSIM: Brain Fiber Bundle Simulator
 
 ## Overview
-This code implements a brain fiber bundle simulator using spline curves for fiber representation.
+This code implements a brain fiber bundle simulator using spline curves for fiber representation. More information in this link  https://doi.org/10.3389/fnins.2024.1396518
 
 ## Prerequisites
 - The code has been executed on both Windows and Ubuntu platforms.
