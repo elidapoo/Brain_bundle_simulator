@@ -56,5 +56,4 @@ if __name__ == "__main__":
     simulated_tractography=main()
 fin=time.time()
 print(fin-inicio)
-import visual_tools as vs
 
