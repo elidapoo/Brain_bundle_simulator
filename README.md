@@ -18,7 +18,6 @@ To use the code, install the following libraries:
 - pip3 install geomdl
 - pip3 install scipy
 
-
 ## Example
 In the following folder are available resampled centroids with 21 points.
 
@@ -36,3 +35,12 @@ All output files are stored in the results folder:
 - **Simulated_tractography.bundles/.bundlesdata**: Contains all the simulated resulting clusters together in .bundles/.bundlesdata format.
 - **Parameters.txt**: Contains stored tuples of the values of the radii sections and the number of fibers for each simulated bundle.
 - **labels.txt**: Contains the labels of the fibers belonging to each simulated bundle.
+
+### Citation
+
+If you use this software in your research, please cite:
+
+Poo E, Mangin J-F, Poupon C, Hernández C, Guevara P.
+PhyberSIM: a tool for the generation of ground truth to evaluate brain fiber clustering algorithms.
+Frontiers in Neuroscience, 2024.
+https://doi.org/10.3389/fnins.2024.1396518
