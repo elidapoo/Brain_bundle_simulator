@@ -36,7 +36,7 @@ All output files are stored in the results folder:
 - **Parameters.txt**: Contains stored tuples of the values of the radii sections and the number of fibers for each simulated bundle.
 - **labels.txt**: Contains the labels of the fibers belonging to each simulated bundle.
 
-### Citation
+## Citation
 
 If you use this software in your research, please cite:
 
