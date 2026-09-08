@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use PhyberSIM in your research, please cite the associated article below."
+title: "PhyberSIM"
+type: software
+authors:
+  - family-names: "Poo"
+    given-names: "Elida"
+license: MIT
+repository-code: "https://github.com/elidapoo/Brain_bundle_simulator"
+
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Poo"
+      given-names: "Elida"
+    - family-names: "Mangin"
+      given-names: "Jean-François"
+    - family-names: "Poupon"
+      given-names: "Cyril"
+    - family-names: "Hernández"
+      given-names: "Cecilia"
+    - family-names: "Guevara"
+      given-names: "Pamela"
+  title: "PhyberSIM: a tool for the generation of ground truth to evaluate brain fiber clustering algorithms"
+  journal: "Frontiers in Neuroscience"
+  volume: 18
+  year: 2024
+  doi: "10.3389/fnins.2024.1396518"
